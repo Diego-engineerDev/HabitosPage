@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css" />
+    <title>To do list</title>
+</head>
+<body>
+    <header>
+        Mi planificador de hábitos
+    </header>
+    
+    <main>
+        <section id="formulario-habitos">
+            <h2>Agregar nuevo hábito</h2>
+            <form id="habito-form">
+                <input tipe="text" id="nombre-habito" placeholder="Nombre del hábito" required>
+                <select id="frecuencia">
+                    <option value="Diario">Diario</option>
+                    <option value="Semanal">Semanal</option>
+                    <option value="Mensual">Mensual</option>
+                </select>
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <section id="lista-habitos">
+            <h2>Mis hábitos</h2>
+        <ul id="habitos-container">
+            <!-- En esta parte se almacenan los hábitos que vaya agregando-->
+        </ul>
+        </section>
+
+         <footer>
+    <p>&copy; 2025 - DiegoEngineerDev</p>
+        </footer>
+
+    <script src="script.js"></script>
+    </main>
+</body>
+</html>
