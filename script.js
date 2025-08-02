@@ -5,7 +5,6 @@ const listaHabitos = document.getElementById('habitos-container');
 
 let habitos = [];
 
-// 🔁 Recuperar hábitos guardados al cargar la página
 window.addEventListener('DOMContentLoaded', () => {
   const habitosGuardados = localStorage.getItem('habitos');
 
@@ -15,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// ✅ Mostrar hábito en pantalla con botón de eliminar
 function mostrarHabitoEnPantalla(habito) {
   const item = document.createElement('li');
   item.textContent = `${habito.nombre} - Frecuencia: ${habito.frecuencia}`;
@@ -25,15 +23,11 @@ function mostrarHabitoEnPantalla(habito) {
   botonEliminar.title = 'Eliminar hábito';
   botonEliminar.classList.add('boton-eliminar');
 
-  // ✂️ Evento para eliminar el hábito
   botonEliminar.addEventListener('click', () => {
-    // Eliminar del arreglo
     habitos = habitos.filter(h => h.nombre !== habito.nombre);
 
-    // Actualizar localStorage
     localStorage.setItem('habitos', JSON.stringify(habitos));
 
-    // Eliminar del DOM
     item.remove();
   });
 
@@ -41,7 +35,6 @@ function mostrarHabitoEnPantalla(habito) {
   listaHabitos.appendChild(item);
 }
 
-// 🧠 Manejo del formulario
 formulario.addEventListener('submit', function(evento) {
   evento.preventDefault();
 
@@ -65,3 +58,4 @@ formulario.addEventListener('submit', function(evento) {
   inputNombre.value = '';
   selectFrecuencia.selectedIndex = 0;
 });
+
